@@ -65,8 +65,23 @@ public abstract class Data extends Referencia {
             this.dia =maxDias;
         }
     }
+
     @Override
-    public int comoInteiro(){
-        
+    public int comoInteiro() {
+        int diaspassados = -1;
+
+        if (ano - 1970 == 0) {
+            for (int j = 0; j < mes; j++) {
+                for (int i : limites.values()) {
+                    diaspassados += i;
+                }
+            }
+        }
+        else {
+            diaspassados += ((ano - 1970)*365);
+        }
+        return diaspassados;
     }
+
+
 }
