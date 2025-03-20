@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class Data extends Referencia {
+public class Data extends Referencia {
     private int ano;
     private int mes;
     private int dia;

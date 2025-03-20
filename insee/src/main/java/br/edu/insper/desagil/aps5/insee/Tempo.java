@@ -1,6 +1,6 @@
 package br.edu.insper.desagil.aps5.insee;
 
-public abstract class Tempo extends Referencia {
+public class Tempo extends Referencia {
     private int hora;
     private int minuto;
 
