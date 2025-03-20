@@ -1,6 +1,6 @@
 package br.edu.insper.desagil.aps5.insee;
 
-public abstract class DataTempo extends Referencia {
+public class DataTempo extends Referencia {
     private Data data;
     private Tempo tempo;
 

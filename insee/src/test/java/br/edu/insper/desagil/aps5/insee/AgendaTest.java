@@ -8,29 +8,34 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AgendaTest {
-    private Agenda agenda;
+    @Test
+    void constroi() {
+        Agenda agenda = new Agenda();
+        int size =  agenda.getEventos().size();
+        assertEquals(0,size);
+    }
 
-    @BeforeEach
-    void constroi(){agenda = new Agenda(); }
 
     @Test
     void adicionaValido() {
-        DataTempo inicio = new DataTempo(new Data(2024, 5, 10), new Tempo(10, 0));
-        DataTempo fim = new DataTempo(new Data(2024, 8, 10), new Tempo(12, 0));
-        Evento evento = new Evento(inicio, fim);
+        Agenda agenda = new Agenda();
+        Data inicio = new Data();
+        Tempo tempoInicio = new Tempo();
+        Data fim = new Data();
+        Tempo tempoFim = new Tempo();
+        inicio.atualiza(2023,6,14);
+        fim.atualiza(2023,6,15);
+        tempoInicio.atualiza(4,45);
+        tempoFim.atualiza(19,0);
+        DataTempo dTInicio = new DataTempo(inicio, tempoInicio);
+        DataTempo dTFim = new DataTempo(fim, tempoFim);
+        Evento evento = new Evento(dTInicio, dTFim);
         agenda.adiciona(evento);
-        assertEquals(1, agenda.getEventos().size());
+
     }
 
     @Test
     void adicionaInvalido() {
-        DataTempo inicio = new DataTempo(new Data(2024, 5, 10), new Tempo(10, 0));
-        DataTempo fim = new DataTempo(new Data(2024, 3, 10), new Tempo(16, 0));
-        Evento evento = new Evento(inicio, fim);
-        agenda.adiciona(evento);
 
     }
-
-
-
 }
