@@ -58,11 +58,12 @@ public class Data extends Referencia {
         }
 
         int maxDias = limites.get(this.mes);
-
         if (dia < 1) {
             this.dia = 1;
         } else if (dia > maxDias) {
             this.dia =maxDias;
+        } else {
+            this.dia = dia;
         }
     }
 
