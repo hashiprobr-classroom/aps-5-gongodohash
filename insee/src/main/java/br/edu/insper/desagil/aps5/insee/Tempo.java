@@ -18,15 +18,17 @@ public class Tempo extends Referencia {
     public void atualiza(int hora,int minuto) {
         if (hora < 0) {
             this.hora = 0;
-        }
-        else if (hora > 23) {
+        } else if (hora > 23) {
             this.hora = 23;
+        } else {
+            this.hora = hora;
         }
-        else if (minuto < 0) {
+        if (minuto < 0) {
             this.minuto = 0;
-        }
-        else if (minuto > 59) {
+        } else if (minuto > 59) {
             this.minuto = 59;
+        } else {
+            this.minuto = minuto;
         }
     }
 
