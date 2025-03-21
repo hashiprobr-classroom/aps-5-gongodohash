@@ -69,19 +69,13 @@ public class Data extends Referencia {
 
     @Override
     public int comoInteiro() {
-        int diaspassados = -1;
-
-        if (ano - 1970 == 0) {
-            for (int j = 0; j < mes; j++) {
-                for (int i : limites.values()) {
-                    diaspassados += i;
-                }
-            }
+        int diasPassados = 0;
+        diasPassados = dia - 1;
+        for (int i=1; i<mes; i++) {
+            diasPassados += limites.get(mes);
         }
-        else {
-            diaspassados += ((ano - 1970)*365);
-        }
-        return diaspassados;
+        diasPassados += (ano-1970)*365;
+        return diasPassados;
     }
 
 
