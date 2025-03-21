@@ -72,7 +72,7 @@ public class Data extends Referencia {
         int diasPassados = 0;
         diasPassados = dia - 1;
         for (int i=1; i<mes; i++) {
-            diasPassados += limites.get(mes);
+            diasPassados += limites.get(i);
         }
         diasPassados += (ano-1970)*365;
         return diasPassados;
