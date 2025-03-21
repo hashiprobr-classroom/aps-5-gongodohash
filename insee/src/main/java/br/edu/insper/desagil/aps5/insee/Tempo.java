@@ -36,7 +36,6 @@ public class Tempo extends Referencia {
     public int comoInteiro() {
         int mins = 0;
         mins+= minuto + (hora*60);
-
         return mins;
     }
 }
